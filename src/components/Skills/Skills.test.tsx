@@ -15,4 +15,16 @@ describe('Skills', () => {
     const listEls = screen.getAllByRole('listitem');
     expect(listEls).toHaveLength(skills.length);
   });
+
+  test('renders toggle button', () => {
+    render(<Skills />);
+    const toggleButton = screen.getByRole('button', { name: 'toggle' });
+    expect(toggleButton).toBeInTheDocument();
+
+    const falseButton = screen.queryByRole('button', { name: 'false' });
+    expect(falseButton).toBeInTheDocument();
+
+    const trueButton = screen.queryByRole('button', { name: 'true' });
+    expect(trueButton).not.toBeInTheDocument();
+  });
 });
