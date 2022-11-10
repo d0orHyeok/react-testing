@@ -27,4 +27,10 @@ describe('Skills', () => {
     const trueButton = screen.queryByRole('button', { name: 'true' });
     expect(trueButton).not.toBeInTheDocument();
   });
+
+  test('promise button eventually displayed', async () => {
+    render(<Skills />);
+    const promiseButton = await screen.findByRole('button', { name: 'promise' }, { timeout: 2000 });
+    expect(promiseButton).toBeInTheDocument();
+  });
 });

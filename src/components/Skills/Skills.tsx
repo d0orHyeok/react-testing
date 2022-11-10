@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface SkillsProps {
   skills?: string[];
@@ -6,6 +6,13 @@ interface SkillsProps {
 
 const Skills = ({ skills }: SkillsProps) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [promise, setPromise] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setPromise(true);
+    }, 500);
+  }, []);
 
   return (
     <>
@@ -14,7 +21,10 @@ const Skills = ({ skills }: SkillsProps) => {
           <li key={value}>{value}</li>
         ))}
       </ul>
-      <button>{`${isLoggedIn}`}</button>
+      <div>
+        <button>{`${isLoggedIn}`}</button>
+        {promise ? <button>promise</button> : null}
+      </div>
       <button onClick={() => setIsLoggedIn((state) => !state)}>toggle</button>
     </>
   );
