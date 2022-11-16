@@ -1,12 +1,15 @@
 import React from 'react';
 import './App.css';
-import Counter from './components/Counter/Counter';
+import CheckTheme from './components/CheckTheme/CheckTheme';
+import { AppProvider } from './providers/AppProvider';
 
 function App() {
   return (
-    <div className="App">
-      <Counter />
-    </div>
+    <AppProvider>
+      <div className="App">
+        <CheckTheme />
+      </div>
+    </AppProvider>
   );
 }
 
