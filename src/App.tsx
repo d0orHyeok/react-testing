@@ -1,8 +1,8 @@
-import React from 'react';
-import './App.css';
-import CheckTheme from './components/CheckTheme/CheckTheme';
-import Users from './components/Users/Users';
-import { AppProvider } from './providers/AppProvider';
+import React from 'react'
+import './App.css'
+import CheckTheme from './components/CheckTheme/CheckTheme'
+import Users from './components/Users/Users'
+import { AppProvider } from './providers/AppProvider'
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <Users />
       </div>
     </AppProvider>
-  );
+  )
 }
 
-export default App;
+export default App

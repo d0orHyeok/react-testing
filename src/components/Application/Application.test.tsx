@@ -1,5 +1,5 @@
-import { render, screen } from '@testing-library/react';
-import Application from './Application';
+import { render, screen } from '@testing-library/react'
+import Application from './Application'
 
 /**
  * getByRole 최우선 탐색
@@ -13,28 +13,28 @@ import Application from './Application';
 
 describe('Application', () => {
   test('renders correctly', () => {
-    render(<Application />);
+    render(<Application />)
 
-    const pageHeading = screen.getByRole('heading', { level: 1 });
-    expect(pageHeading).toBeInTheDocument();
+    const pageHeading = screen.getByRole('heading', { level: 1 })
+    expect(pageHeading).toBeInTheDocument()
 
-    const sectionHeading = screen.getByRole('heading', { level: 2 });
-    expect(sectionHeading).toBeInTheDocument();
+    const sectionHeading = screen.getByRole('heading', { level: 2 })
+    expect(sectionHeading).toBeInTheDocument()
 
-    const paragraphEl = screen.getByText('All fields are mandatory');
-    expect(paragraphEl).toBeInTheDocument();
+    const paragraphEl = screen.getByText('All fields are mandatory')
+    expect(paragraphEl).toBeInTheDocument()
 
-    const imageEl = screen.getByAltText('a person with a laptop');
-    expect(imageEl).toBeInTheDocument();
+    const imageEl = screen.getByAltText('a person with a laptop')
+    expect(imageEl).toBeInTheDocument()
 
-    const closeEl = screen.getByTitle('close');
-    expect(closeEl).toBeInTheDocument();
+    const closeEl = screen.getByTitle('close')
+    expect(closeEl).toBeInTheDocument()
 
-    const customEl = screen.getByTestId('custom-element');
-    expect(customEl).toBeInTheDocument();
+    const customEl = screen.getByTestId('custom-element')
+    expect(customEl).toBeInTheDocument()
 
-    const nameEl = screen.getByRole('textbox', { name: 'Name' });
-    expect(nameEl).toBeInTheDocument();
+    const nameEl = screen.getByRole('textbox', { name: 'Name' })
+    expect(nameEl).toBeInTheDocument()
     // const nameEl2 = screen.getByLabelText('Name', { selector: 'input' });
     // expect(nameEl2).toBeInTheDocument();
     // const nameEl3 = screen.getByPlaceholderText('Fullname');
@@ -42,18 +42,19 @@ describe('Application', () => {
     // const nameEl4 = screen.getByDisplayValue('Hyeok');
     // expect(nameEl4).toBeInTheDocument();
 
-    const bioEl = screen.getByRole('textbox', { name: 'Bio' });
-    expect(bioEl).toBeInTheDocument();
+    const bioEl = screen.getByRole('textbox', { name: 'Bio' })
+    expect(bioEl).toBeInTheDocument()
 
-    const jobLocationEl = screen.getByRole('combobox');
-    expect(jobLocationEl).toBeInTheDocument();
+    const jobLocationEl = screen.getByRole('combobox')
+    expect(jobLocationEl).toBeInTheDocument()
 
-    const termsEl = screen.getByRole('checkbox');
-    expect(termsEl).toBeInTheDocument();
+    const termsEl = screen.getByRole('checkbox')
+    expect(termsEl).toBeInTheDocument()
     // const termsEl2 = screen.getByLabelText('I agree to the terms and conditions');
     // expect(termsEl2).toBeInTheDocument();
 
-    const submitButtonEl = screen.getByRole('button');
-    expect(submitButtonEl).toBeInTheDocument();
-  });
-});
+    const submitButtonEl = screen.getByRole('button')
+    expect(submitButtonEl).toBeInTheDocument()
+    expect(submitButtonEl).toBeDisabled()
+  })
+})

@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 
 interface SkillsProps {
-  skills?: string[];
+  skills?: string[]
 }
 
 const Skills = ({ skills }: SkillsProps) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [promise, setPromise] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [promise, setPromise] = useState(false)
 
   useEffect(() => {
     setTimeout(() => {
-      setPromise(true);
-    }, 500);
-  }, []);
+      setPromise(true)
+    }, 500)
+  }, [])
 
   return (
     <>
@@ -27,7 +27,7 @@ const Skills = ({ skills }: SkillsProps) => {
       </div>
       <button onClick={() => setIsLoggedIn((state) => !state)}>toggle</button>
     </>
-  );
-};
+  )
+}
 
-export default Skills;
+export default Skills

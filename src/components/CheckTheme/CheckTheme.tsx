@@ -1,9 +1,9 @@
-import React from 'react';
-import { useAppProvider } from '../../providers/AppProvider';
+import React from 'react'
+import { useAppProvider } from '../../providers/AppProvider'
 
 const CheckTheme = () => {
-  const { theme } = useAppProvider();
-  return <h1>{theme} mode</h1>;
-};
+  const { theme } = useAppProvider()
+  return <h1>{theme} mode</h1>
+}
 
-export default CheckTheme;
+export default CheckTheme
